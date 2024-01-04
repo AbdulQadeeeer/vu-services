@@ -23,6 +23,10 @@
             margin: 10px 10px;
             padding: 10px 10px;
         }
+
+        .latest-update-details {
+            margin-top: 20px;
+        }
     </style>
 </head>
 
@@ -41,8 +45,36 @@
     </header>
 
     <div class="content">
-        <section id="latest-commit-section">
-            <!-- Latest commit details will be displayed here -->
+        <section id="handouts-section">
+            <!-- Your handouts content goes here -->
+            <h2>Handouts Section</h2>
+            <div class="latest-update-details" id="latest-handouts-update">
+                <!-- Latest handouts update details will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <section id="gdb-section">
+            <!-- Your GDBs content goes here -->
+            <h2>GDB Section</h2>
+            <div class="latest-update-details" id="latest-gdb-update">
+                <!-- Latest GDB update details will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <section id="quizzes-section">
+            <!-- Your Quizzes content goes here -->
+            <h2>Quizzes Section</h2>
+            <div class="latest-update-details" id="latest-quizzes-update">
+                <!-- Latest quizzes update details will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <section id="assignments-section">
+            <!-- Your Assignments content goes here -->
+            <h2>Assignments Section</h2>
+            <div class="latest-update-details" id="latest-assignments-update">
+                <!-- Latest assignments update details will be dynamically inserted here -->
+            </div>
         </section>
     </div>
 
@@ -56,29 +88,51 @@
     </footer>
 
     <script>
-        
-        // Fetch latest commit information using GitHub API
-        fetch('https://github.com/repos//AbdulQadeeeer/vu-services.git/commits')
-            .then(response => response.json())
-            .then(data => {
-                // Extract relevant commit information (example: message, author, date)
-                const latestCommit = data[0];
-                const commitMessage = latestCommit.commit.message;
-                const commitAuthor = latestCommit.commit.author.name;
-                const commitDate = latestCommit.commit.author.date;
+        // Example: Simulating fetching latest updates for each section
+        const latestHandoutsUpdateDetails = {
+            updateMessage: 'New handouts uploaded!',
+            updateDate: 'January 15, 2024',
+        };
 
-                // Display the commit information in the section
-                const latestCommitSection = document.getElementById('latest-commit-section');
-                latestCommitSection.innerHTML = `
-                    <h2>Latest Commit</h2>
-                    <p>Commit Message: ${commitMessage}</p>
-                    <p>Author: ${commitAuthor}</p>
-                    <p>Date: ${commitDate}</p>
-                `;
-            })
-            .catch(error => {
-                console.error('Error fetching latest commit:', error);
-            });
+        const latestGDBUpdateDetails = {
+            updateMessage: 'New GDB uploaded!',
+            updateDate: 'January 16, 2024',
+        };
+
+        const latestQuizzesUpdateDetails = {
+            updateMessage: 'New quizzes uploaded!',
+            updateDate: 'January 17, 2024',
+        };
+
+        const latestAssignmentsUpdateDetails = {
+            updateMessage: 'New assignments uploaded!',
+            updateDate: 'January 18, 2024',
+        };
+
+        // Display the latest updates for each section
+        const latestHandoutsUpdateElement = document.getElementById('latest-handouts-update');
+        latestHandoutsUpdateElement.innerHTML = `
+            <p>${latestHandoutsUpdateDetails.updateMessage}</p>
+            <p>Date: ${latestHandoutsUpdateDetails.updateDate}</p>
+        `;
+
+        const latestGDBUpdateElement = document.getElementById('latest-gdb-update');
+        latestGDBUpdateElement.innerHTML = `
+            <p>${latestGDBUpdateDetails.updateMessage}</p>
+            <p>Date: ${latestGDBUpdateDetails.updateDate}</p>
+        `;
+
+        const latestQuizzesUpdateElement = document.getElementById('latest-quizzes-update');
+        latestQuizzesUpdateElement.innerHTML = `
+            <p>${latestQuizzesUpdateDetails.updateMessage}</p>
+            <p>Date: ${latestQuizzesUpdateDetails.updateDate}</p>
+        `;
+
+        const latestAssignmentsUpdateElement = document.getElementById('latest-assignments-update');
+        latestAssignmentsUpdateElement.innerHTML = `
+            <p>${latestAssignmentsUpdateDetails.updateMessage}</p>
+            <p>Date: ${latestAssignmentsUpdateDetails.updateDate}</p>
+        `;
     </script>
 
 </body>
