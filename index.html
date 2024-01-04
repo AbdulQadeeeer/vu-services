@@ -7,7 +7,22 @@
     <link rel="stylesheet" href="style/home.css">
     <title>Vu Services</title>
     <style>
-       
+        /* Your existing styles remain unchanged */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* ... (other styles) ... */
+
+        section {
+            border: 1px solid black;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+            margin: 10px 10px;
+            padding: 10px 10px;
+        }
     </style>
 </head>
 
@@ -26,8 +41,9 @@
     </header>
 
     <div class="content">
-        <!-- Your main content goes here -->
-        <p>Welcome to Vu Services! Your one-stop solution for education-related services.</p>
+        <section id="latest-commit-section">
+            <!-- Latest commit details will be displayed here -->
+        </section>
     </div>
 
     <footer>
@@ -38,6 +54,32 @@
         <a href="desclimer.html">Disclaimer</a>
         <a href="privacy_policy.html">Privacy Policy</a>
     </footer>
+
+    <script>
+        
+        // Fetch latest commit information using GitHub API
+        fetch('https://github.com/repos//AbdulQadeeeer/vu-services.git/commits')
+            .then(response => response.json())
+            .then(data => {
+                // Extract relevant commit information (example: message, author, date)
+                const latestCommit = data[0];
+                const commitMessage = latestCommit.commit.message;
+                const commitAuthor = latestCommit.commit.author.name;
+                const commitDate = latestCommit.commit.author.date;
+
+                // Display the commit information in the section
+                const latestCommitSection = document.getElementById('latest-commit-section');
+                latestCommitSection.innerHTML = `
+                    <h2>Latest Commit</h2>
+                    <p>Commit Message: ${commitMessage}</p>
+                    <p>Author: ${commitAuthor}</p>
+                    <p>Date: ${commitDate}</p>
+                `;
+            })
+            .catch(error => {
+                console.error('Error fetching latest commit:', error);
+            });
+    </script>
 
 </body>
 
