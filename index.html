@@ -88,14 +88,14 @@
                 const contentData = await contentResponse.json();
 
                 const latestContentElement = document.getElementById(`latest-${sectionId}-content`);
-                latestContentElement.innerHTML = atob(contentData.content);
+                latestContentElement.innerText = atob(contentData.content);
             } catch (error) {
                 console.error(`Error fetching latest content for ${sectionId}:`, error);
             }
         }
 
         // Specify your GitHub repository, file path, and section ID for each section
-        fetchLatestContent('AbdulQadeeeer/vu-services', 'handouts.html', 'handouts');
+        fetchLatestContent('AbdulQadeeeer/vu-services', 'handouts/handouts.html', 'handouts');
         fetchLatestContent('AbdulQadeeeer/vu-services', 'quizzes/quizzes.html', 'quizzes');
         fetchLatestContent('AbdulQadeeeer/vu-services', 'assignments/assignments.html', 'assignments');
         fetchLatestContent('AbdulQadeeeer/vu-services', 'gdbs/gdbs.html', 'gdbs');
