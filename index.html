@@ -46,35 +46,23 @@
 
     <div class="content">
         <section id="handouts-section">
-            <!-- Your handouts content goes here -->
             <h2>Handouts Section</h2>
-            <div class="latest-content" id="latest-handouts-content">
-                <!-- Latest handouts content will be dynamically inserted here -->
-            </div>
+            <div class="latest-content" id="latest-handouts-content"></div>
         </section>
 
         <section id="quizzes-section">
-            <!-- Your Quizzes content goes here -->
             <h2>Quizzes Section</h2>
-            <div class="latest-content" id="latest-quizzes-content">
-                <!-- Latest quizzes content will be dynamically inserted here -->
-            </div>
+            <div class="latest-content" id="latest-quizzes-content"></div>
         </section>
 
         <section id="assignments-section">
-            <!-- Your Assignments content goes here -->
             <h2>Assignments Section</h2>
-            <div class="latest-content" id="latest-assignments-content">
-                <!-- Latest assignments content will be dynamically inserted here -->
-            </div>
+            <div class="latest-content" id="latest-assignments-content"></div>
         </section>
 
         <section id="gdbs-section">
-            <!-- Your GDBs content goes here -->
             <h2>GDBs Section</h2>
-            <div class="latest-content" id="latest-gdbs-content">
-                <!-- Latest GDBs content will be dynamically inserted here -->
-            </div>
+            <div class="latest-content" id="latest-gdbs-content"></div>
         </section>
     </div>
 
@@ -88,24 +76,24 @@
     </footer>
 
     <script>
-        // Example: Simulating fetching latest content for each section
-        const latestHandoutsContent = 'Latest Handouts Content';
-        const latestQuizzesContent = 'Latest Quizzes Content';
-        const latestAssignmentsContent = 'Latest Assignments Content';
-        const latestGDBsContent = 'Latest GDBs Content';
+        // Function to fetch latest content for a section from the server
+        async function fetchLatestContent(sectionId) {
+            try {
+                const response = await fetch(`path/to/api/${sectionId}`);
+                const data = await response.json();
 
-        // Display the latest content for each section
-        const latestHandoutsContentElement = document.getElementById('latest-handouts-content');
-        latestHandoutsContentElement.innerText = latestHandoutsContent;
+                const latestContentElement = document.getElementById(`latest-${sectionId}-content`);
+                latestContentElement.innerHTML = data.content;
+            } catch (error) {
+                console.error(`Error fetching latest content for ${sectionId}:`, error);
+            }
+        }
 
-        const latestQuizzesContentElement = document.getElementById('latest-quizzes-content');
-        latestQuizzesContentElement.innerText = latestQuizzesContent;
-
-        const latestAssignmentsContentElement = document.getElementById('latest-assignments-content');
-        latestAssignmentsContentElement.innerText = latestAssignmentsContent;
-
-        const latestGDBsContentElement = document.getElementById('latest-gdbs-content');
-        latestGDBsContentElement.innerText = latestGDBsContent;
+        // Fetch latest content for each section
+        fetchLatestContent('handouts');
+        fetchLatestContent('quizzes');
+        fetchLatestContent('assignments');
+        fetchLatestContent('gdbs');
     </script>
 
 </body>
