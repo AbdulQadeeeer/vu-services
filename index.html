@@ -76,24 +76,29 @@
     </footer>
 
     <script>
-        // Function to fetch latest content for a section from the server
-        async function fetchLatestContent(sectionId) {
+        // Function to fetch the latest commit content for a file from GitHub
+        async function fetchLatestContent(repo, filePath, sectionId) {
             try {
-                const response = await fetch(`path/to/api/${sectionId}`);
+                const response = await fetch(`https://api.github.com/repos/${repo}/commits?path=${filePath}`);
                 const data = await response.json();
 
+                // Get the content of the latest commit
+                const latestCommit = data[0].sha;
+                const contentResponse = await fetch(`https://api.github.com/repos/${repo}/git/blobs/${latestCommit}`);
+                const contentData = await contentResponse.json();
+
                 const latestContentElement = document.getElementById(`latest-${sectionId}-content`);
-                latestContentElement.innerHTML = data.content;
+                latestContentElement.innerHTML = atob(contentData.content);
             } catch (error) {
                 console.error(`Error fetching latest content for ${sectionId}:`, error);
             }
         }
 
-        // Fetch latest content for each section
-        fetchLatestContent('handouts');
-        fetchLatestContent('quizzes');
-        fetchLatestContent('assignments');
-        fetchLatestContent('gdbs');
+        // Specify your GitHub repository, file path, and section ID for each section
+        fetchLatestContent('AbdulQadeeeer/vu-services', 'handouts/handouts.html', 'handouts');
+        fetchLatestContent('AbdulQadeeeer/vu-services', 'quizzes/quizzes.html', 'quizzes');
+        fetchLatestContent('AbdulQadeeeer/vu-services', 'assignments/assignments.html', 'assignments');
+        fetchLatestContent('AbdulQadeeeer/vu-services', 'gdbs/gdbs.html', 'gdbs');
     </script>
 
 </body>
