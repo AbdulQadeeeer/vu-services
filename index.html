@@ -6,28 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/home.css">
     <title>Vu Services</title>
-    <style>
-        /* Your existing styles remain unchanged */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
 
-        /* ... (other styles) ... */
-
-        section {
-            border: 1px solid black;
-            box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-            margin: 10px 10px;
-            padding: 10px 10px;
-        }
-
-        .latest-content {
-            margin-top: 20px;
-        }
-    </style>
 </head>
 
 <body>
@@ -40,7 +19,7 @@
             <a href="quizzes/quizzes.html">Quizzes</a>
             <a href="assignments/assignments.html">Assignments</a>
             <a href="gdbs/gdbs.html">GDBs</a>
-            <a href="contact_us.html">Contact Us</a>
+            <a href="contact_us/contact_us.html">Contact Us</a>
         </nav>
     </header>
 
@@ -67,39 +46,15 @@
     </div>
 
     <footer>
-        <a href="team_vu_services.html">Team Vu Services</a>
-        <a href="about_us.html">About Us</a>
-        <a href="contact_us.html">Contact Us</a>
-        <a href="team_vu_services.html">Terms and Conditions</a>
-        <a href="disclaimer.html">Disclaimer</a>
-        <a href="privacy_policy.html">Privacy Policy</a>
+        <a href="team_vu_services/team_vu_services.html">Team Vu Services</a>
+        <a href="about_us/about_us.html">About Us</a>
+        <a href="contact_us/contact_us.html">Contact Us</a>
+        <a href="terms_and_conditions/terms_and_conditions.html">Terms and Conditions</a>
+        <a href="desclimer/desclimer.html">Disclaimer</a>
+        <a href="privacy_policy/privacy_policy.html">Privacy Policy</a>
     </footer>
 
-    <script>
-        // Function to fetch the latest commit content for a file from GitHub
-        async function fetchLatestContent(repo, filePath, sectionId) {
-            try {
-                const response = await fetch(`https://api.github.com/repos/${repo}/commits?path=${filePath}`);
-                const data = await response.json();
-
-                // Get the content of the latest commit
-                const latestCommit = data[0].sha;
-                const contentResponse = await fetch(`https://api.github.com/repos/${repo}/git/blobs/${latestCommit}`);
-                const contentData = await contentResponse.json();
-
-                const latestContentElement = document.getElementById(`latest-${sectionId}-content`);
-                latestContentElement.innerText = atob(contentData.content);
-            } catch (error) {
-                console.error(`Error fetching latest content for ${sectionId}:`, error);
-            }
-        }
-
-        // Specify your GitHub repository, file path, and section ID for each section
-        fetchLatestContent('AbdulQadeeeer/vu-services', 'handouts/handouts.html', 'handouts-section');
-        fetchLatestContent('AbdulQadeeeer/vu-services', 'quizzes/quizzes.html', 'quizzes-section');
-        fetchLatestContent('AbdulQadeeeer/vu-services', 'assignments/assignments.html', 'assignments-section');
-        fetchLatestContent('AbdulQadeeeer/vu-services', 'gdbs/gdbs.html', 'gdbs-section');
-    </script>
+    <link rel="stylesheet" href="script/home.js">
 
 </body>
 
