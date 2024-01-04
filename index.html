@@ -24,7 +24,7 @@
             padding: 10px 10px;
         }
 
-        .latest-update-details {
+        .latest-content {
             margin-top: 20px;
         }
     </style>
@@ -37,9 +37,9 @@
         <nav>
             <a href="index.html">Home</a>
             <a href="handouts.html">Handouts</a>
-            <a href="quize.html">Quizzes</a>
+            <a href="quizzes.html">Quizzes</a>
             <a href="assignments.html">Assignments</a>
-            <a href="gdb.html">GDBs</a>
+            <a href="gdbs.html">GDBs</a>
             <a href="contact_us.html">Contact Us</a>
         </nav>
     </header>
@@ -48,32 +48,32 @@
         <section id="handouts-section">
             <!-- Your handouts content goes here -->
             <h2>Handouts Section</h2>
-            <div class="latest-update-details" id="latest-handouts-update">
-                <!-- Latest handouts update details will be dynamically inserted here -->
-            </div>
-        </section>
-
-        <section id="gdb-section">
-            <!-- Your GDBs content goes here -->
-            <h2>GDB Section</h2>
-            <div class="latest-update-details" id="latest-gdb-update">
-                <!-- Latest GDB update details will be dynamically inserted here -->
+            <div class="latest-content" id="latest-handouts-content">
+                <!-- Latest handouts content will be dynamically inserted here -->
             </div>
         </section>
 
         <section id="quizzes-section">
             <!-- Your Quizzes content goes here -->
             <h2>Quizzes Section</h2>
-            <div class="latest-update-details" id="latest-quizzes-update">
-                <!-- Latest quizzes update details will be dynamically inserted here -->
+            <div class="latest-content" id="latest-quizzes-content">
+                <!-- Latest quizzes content will be dynamically inserted here -->
             </div>
         </section>
 
         <section id="assignments-section">
             <!-- Your Assignments content goes here -->
             <h2>Assignments Section</h2>
-            <div class="latest-update-details" id="latest-assignments-update">
-                <!-- Latest assignments update details will be dynamically inserted here -->
+            <div class="latest-content" id="latest-assignments-content">
+                <!-- Latest assignments content will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <section id="gdbs-section">
+            <!-- Your GDBs content goes here -->
+            <h2>GDBs Section</h2>
+            <div class="latest-content" id="latest-gdbs-content">
+                <!-- Latest GDBs content will be dynamically inserted here -->
             </div>
         </section>
     </div>
@@ -83,56 +83,29 @@
         <a href="about_us.html">About Us</a>
         <a href="contact_us.html">Contact Us</a>
         <a href="team_vu_services.html">Terms and Conditions</a>
-        <a href="desclimer.html">Disclaimer</a>
+        <a href="disclaimer.html">Disclaimer</a>
         <a href="privacy_policy.html">Privacy Policy</a>
     </footer>
 
     <script>
-        // Example: Simulating fetching latest updates for each section
-        const latestHandoutsUpdateDetails = {
-            updateMessage: 'New handouts uploaded!',
-            updateDate: 'January 15, 2024',
-        };
+        // Example: Simulating fetching latest content for each section
+        const latestHandoutsContent = 'Latest Handouts Content';
+        const latestQuizzesContent = 'Latest Quizzes Content';
+        const latestAssignmentsContent = 'Latest Assignments Content';
+        const latestGDBsContent = 'Latest GDBs Content';
 
-        const latestGDBUpdateDetails = {
-            updateMessage: 'New GDB uploaded!',
-            updateDate: 'January 16, 2024',
-        };
+        // Display the latest content for each section
+        const latestHandoutsContentElement = document.getElementById('latest-handouts-content');
+        latestHandoutsContentElement.innerText = latestHandoutsContent;
 
-        const latestQuizzesUpdateDetails = {
-            updateMessage: 'New quizzes uploaded!',
-            updateDate: 'January 17, 2024',
-        };
+        const latestQuizzesContentElement = document.getElementById('latest-quizzes-content');
+        latestQuizzesContentElement.innerText = latestQuizzesContent;
 
-        const latestAssignmentsUpdateDetails = {
-            updateMessage: 'New assignments uploaded!',
-            updateDate: 'January 18, 2024',
-        };
+        const latestAssignmentsContentElement = document.getElementById('latest-assignments-content');
+        latestAssignmentsContentElement.innerText = latestAssignmentsContent;
 
-        // Display the latest updates for each section
-        const latestHandoutsUpdateElement = document.getElementById('latest-handouts-update');
-        latestHandoutsUpdateElement.innerHTML = `
-            <p>${latestHandoutsUpdateDetails.updateMessage}</p>
-            <p>Date: ${latestHandoutsUpdateDetails.updateDate}</p>
-        `;
-
-        const latestGDBUpdateElement = document.getElementById('latest-gdb-update');
-        latestGDBUpdateElement.innerHTML = `
-            <p>${latestGDBUpdateDetails.updateMessage}</p>
-            <p>Date: ${latestGDBUpdateDetails.updateDate}</p>
-        `;
-
-        const latestQuizzesUpdateElement = document.getElementById('latest-quizzes-update');
-        latestQuizzesUpdateElement.innerHTML = `
-            <p>${latestQuizzesUpdateDetails.updateMessage}</p>
-            <p>Date: ${latestQuizzesUpdateDetails.updateDate}</p>
-        `;
-
-        const latestAssignmentsUpdateElement = document.getElementById('latest-assignments-update');
-        latestAssignmentsUpdateElement.innerHTML = `
-            <p>${latestAssignmentsUpdateDetails.updateMessage}</p>
-            <p>Date: ${latestAssignmentsUpdateDetails.updateDate}</p>
-        `;
+        const latestGDBsContentElement = document.getElementById('latest-gdbs-content');
+        latestGDBsContentElement.innerText = latestGDBsContent;
     </script>
 
 </body>
