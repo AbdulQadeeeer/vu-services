@@ -74,6 +74,10 @@ nav a:hover {
     margin-right: 10px;
 }
 
+header h1{
+    color: white;
+}
+
 footer {
     background-color: #333;
     color: white;

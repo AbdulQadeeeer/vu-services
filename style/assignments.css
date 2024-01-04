@@ -45,6 +45,10 @@ nav a:hover {
     padding: 20px;
 }
 
+header h1{
+    color: white;
+}
+
 .assignments-content {
     max-width: 800px;
     margin: 0 auto;
