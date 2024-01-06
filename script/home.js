@@ -1,6 +1,8 @@
 const games = [
+    "./games/Menja/Menja.html",
     "./games/js-Planet-Defence/js-Planet-Defence.html",
-    "./games/Snake/Snake.html"
+    "./games/Snake/Snake.html",
+   
 ];
 
 let currentGameIndex = 0;
