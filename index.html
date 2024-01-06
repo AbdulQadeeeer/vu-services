@@ -22,27 +22,32 @@
         </nav>
     </header>
 
-    <div class="content">
-        <section id="handouts-section">
-            <h2>Handouts Section</h2>
-            <div class="latest-content" id="latest-handouts-content"></div>
-        </section>
+    <section class="game-container">
+        <div class="nav-buttons">
+            <button onclick="showPreviousGame()">Previous</button>
+            <button onclick="showNextGame()">Next</button>
+        </div>
+        <iframe id="currentGame" class="game-iframe" src="./games/js-Planet-Defence/js-Planet-Defence.html"
+            allowfullscreen frameborder="0"></iframe>
+    </section>
 
-        <section id="quizzes-section">
-            <h2>Quizzes Section</h2>
-            <div class="latest-content" id="latest-quizzes-content"></div>
-        </section>
+    <section class="game-container">
+        <div class="nav-buttons">
+            <button onclick="showPreviousGame()">Previous</button>
+            <button onclick="showNextGame()">Next</button>
+        </div>
+        <iframe id="currentGame" class="game-iframe" src="./games/Snake/Snake.html" allowfullscreen
+            frameborder="0"></iframe>
+    </section>
 
-        <section id="assignments-section">
-            <h2>Assignments Section</h2>
-            <div class="latest-content" id="latest-assignments-content"></div>
-        </section>
-
-        <section id="gdbs-section">
-            <h2>GDBs Section</h2>
-            <div class="latest-content" id="latest-gdbs-content"></div>
-        </section>
-    </div>
+    <section class="game-container">
+        <div class="nav-buttons">
+            <button onclick="showPreviousGame()">Previous</button>
+            <button onclick="showNextGame()">Next</button>
+        </div>
+        <iframe id="currentGame" class="game-iframe" src="./games/Menja/Menja.html"
+            allowfullscreen frameborder="0"></iframe>
+    </section>
 
     <footer>
         <a href="team_vu_services/team_vu_services.html">Team Vu Services</a>
